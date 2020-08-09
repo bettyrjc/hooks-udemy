@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 // import App from "./HookApp";
 // import Counter from "./components/useState/Counter";
-import SimpleForm from "./components/3-examples/MultiplesCustomHooks";
+import SimpleForm from "./components/6-memo/CallBackHook";
 
 import * as serviceWorker from "./serviceWorker";
 
