@@ -3,14 +3,6 @@ import { todoReducer } from "./todoReducer";
 import { useForm } from "../customHooks/useForm";
 import "../styles.css";
 const TodoApp = () => {
-  // const initialState = [
-  //   {
-  //     id: new Date().getTime(),
-  //     desc: "Aprender React",
-  //     done: false,
-  //   },
-  // JSON.parse(localStorage.getItem("todos")) || []
-  // ];
   const init = () => {
     return JSON.parse(localStorage.getItem("todos")) || [];
   };
@@ -43,6 +35,20 @@ const TodoApp = () => {
     dispacth(action);
     reset();
   };
+
+  const handleDelete = (todoId) => {
+    dispacth({
+      type: "delete",
+      payload: todoId,
+    });
+  };
+
+  const handleToggle = (todoId) => {
+    dispacth({
+      type: "toggle",
+      payload: todoId,
+    });
+  };
   return (
     <div>
       <h1>Todo app ({todos.length})</h1>
@@ -52,10 +58,18 @@ const TodoApp = () => {
           <ul className="list-group list-group-flush m-t1">
             {todos.map((todo, i) => (
               <li className="list-group-item" key={todo.id}>
-                <p className="text-center">
+                <p
+                  className={`${todo.done && "complete"}`}
+                  onClick={() => handleToggle(todo.id)}
+                >
                   {i + 1}. {todo.desc}
                 </p>
-                <button className="btn btn-danger">Borrar</button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleDelete(todo.id)}
+                >
+                  Borrar
+                </button>
               </li>
             ))}
           </ul>
