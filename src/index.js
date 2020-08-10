@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 // import App from "./HookApp";
 // import Counter from "./components/useState/Counter";
-import SimpleForm from "./components/6-memo/CallBackHook";
+import SimpleForm from "./components/7-useReducer/TodoApp";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -18,3 +18,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+// import "./components/7-useReducer/intro-reducer";

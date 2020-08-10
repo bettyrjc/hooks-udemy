@@ -23,3 +23,31 @@ uno: cuadno se manda una funcion a un componente hijo. para que no genere una nu
 dos: cuando se tiene useEFect y el efecto tiene una dependecncia y esa es una funcion, para que no se renderice
 
 ## seccion 10 Profundizando Hooks use Reducer
+
+el useState y useReducer hacen en teoria lo mismo, pero el reducer es mas usado cuando hay que hacer mas cosas y muchas acciones en el state de la aplicacion.
+
+El useReducer: hay que entender bien el redux.
+
+## Introduccion al concepto del reducer:
+
+1-nos es mas que una funcion comun y corriente, no es asincrona.
+2-Es una funcion pura, todo lo que realice debe resolverse de manera interna
+3-Debe retornar un nuevo estado.
+recibe un stado inicial y la accion a ejecutar.
+
+El nombre de la funcion deberia ser bien especifico.
+
+## en la funcion pura:
+
+no debe tener efectos secundarios.
+1-No debe tener tareas asincronas
+2-Debe retornar siempre un estado, no debe mutar nunca un nuevo estado
+3-No debe llamar localStorage o sessionStorage, porque son conciderados efectos secundarios.
+4-Para modificar el state no debe requerir mas que una accion
+
+Usereducer es una alternativa, pero con una diferencia el state es mas simple y si es algo muy grande usen reducer.
+
+reducer la funcion reducer
+initial state
+init: es usado como una funcion para inicializar el state en caso de que tenga varias acciones, lo hace mas ligero y rapido puede memorizar el estado
+const [state, dispatch] = useReducer(reducer, initialState, init);
