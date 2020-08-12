@@ -51,3 +51,26 @@ reducer la funcion reducer
 initial state
 init: es usado como una funcion para inicializar el state en caso de que tenga varias acciones, lo hace mas ligero y rapido puede memorizar el estado
 const [state, dispatch] = useReducer(reducer, initialState, init);
+
+## seccion once
+
+useContext: es ideal cuando la info va de abuelo a nieto. El useContext, ayuda a romper esta referencia donde hay que tener almacenado en el context la info para cuando algun hijo lo necesite, lo busca ahi.
+Sera sin mandarlo sin props. Esto es mas para casos donde es mucha comunicacion de padre(Abuelo) y nieto
+
+Context
+
+Provider
+
+useContext
+
+React Router
+
+Links y NavLinks
+
+CreateContext
+
+SPA ( Single Page Application )
+
+El objetivo de la sección es principalmente aprender sobre el Context, el Router es un valor agregado que explotaremos mucho más en próximas secciones, pero al usar un Router, podemos explicar claramente el problema y necesidad del context.
+
+useContext:
